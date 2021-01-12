@@ -1,22 +1,27 @@
 package Module1;
-
+import javax.swing.JOptionPane;
 public class Nivell01Fase03 {
 public static void main(String[] args) {
-	
-	int i=1948;
-	boolean valido=true;
+		
+	boolean valido =false;
 	String cierto="Any de traspàs";
 	String nocierto="No any de traspàs";
 	
 	
-	for (i=1948; i<=1976; i+=4) { 
+			do{
+			int entradaño=Integer.parseInt(JOptionPane.showInputDialog("Introdueix data de naixement"));
+			for (int i=1900; i<=2000; i+=4) { 
+			System.out.println(cierto + " " + i);	
+			}
 		
-	System.out.println(cierto + " " + i);	
+			if((entradaño % 100 == 0 && entradaño % 400 ==0) || (entradaño % 4 == 0 && entradaño % 100 != 0)){
+				System.out.println(cierto);
+				valido=true;
+				//System.getProperty("line.separator");
+			}else {System.out.println(nocierto);
+			}
+			
+			}while(valido=false);
 		
-	}
-	
-	
-	System.out.println("Finito");
-	
 }
 }
