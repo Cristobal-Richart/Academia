@@ -17,8 +17,7 @@ public static void main(String[] args) {
 			if((entradaño % 100 == 0 && entradaño % 400 ==0) || (entradaño % 4 == 0 && entradaño % 100 != 0)){
 				System.out.println(cierto);
 				valido=true;
-				//System.getProperty("line.separator");
-			}else {System.out.println(nocierto);
+				}else {System.out.println(nocierto);
 			}
 			
 			}while(valido=false);
