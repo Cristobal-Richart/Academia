@@ -1,7 +1,10 @@
 package Module1;
 
-public class Nivell01Fase03 {
+public class Nivell01Fase04 {
 public static void main(String[] args) {
+	
+	String nom="Cristóbal Richart Barbeira";
+	String data="06/11/1975";
 	
 	int i=1948;
 	boolean valido=true;
@@ -15,8 +18,6 @@ public static void main(String[] args) {
 		
 	}
 	
-	
-	System.out.println("Finito");
 	
 }
 }
