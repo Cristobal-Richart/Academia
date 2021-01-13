@@ -13,8 +13,8 @@ public static void main(String[] args) {
 			for (int i=1900; i<=2000; i+=4) { 
 			System.out.println(cierto + " " + i);	
 			}
-		
-			if((entradaño % 100 == 0 && entradaño % 400 ==0) || (entradaño % 4 == 0 && entradaño % 100 != 0)){
+			if((entradaño % 100 != 0) && (entradaño % 4 == 0) || (entradaño % 400 == 0)) {
+			
 				System.out.println(cierto);
 				valido=true;
 				}else {System.out.println(nocierto);
