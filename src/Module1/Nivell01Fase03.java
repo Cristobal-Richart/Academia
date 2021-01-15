@@ -2,25 +2,29 @@ package Module1;
 import javax.swing.JOptionPane;
 public class Nivell01Fase03 {
 public static void main(String[] args) {
-		
-	boolean valido =false;
-	String cierto="Any de traspàs";
-	String nocierto="No any de traspàs";
 	
 	
-			do{
-			int entradaño=Integer.parseInt(JOptionPane.showInputDialog("Introdueix data de naixement"));
-			for (int i=1900; i<=2000; i+=4) { 
-			System.out.println(cierto + " " + i);	
-			}
-			if((entradaño % 100 != 0) && (entradaño % 4 == 0) || (entradaño % 400 == 0)) {
-			
-				System.out.println(cierto);
-				valido=true;
-				}else {System.out.println(nocierto);
-			}
-			
-			}while(valido=false);
+	boolean valido =true;
+	String cierto="año bisiesto.";
+	String nocierto="año no bisiesto.";
+	String tuañobisiesto= " naciste un año bisiesto";
+	String tuañonobisiesto=" naciste un año no bisiesto";
+	
+	do{		
 		
+		for (int i=1948; i<=1980; i++) {
+			
+			if ((i % 100 != 0 && i % 4 == 0) || (i % 100 ==0 && i % 400 ==0)) System.out.println(i+ ", " + cierto);
+			else System.out.println(i + ", " + nocierto);
+			
+		}System.out.println();
+		int entradaño= Integer.parseInt(JOptionPane.showInputDialog("Introduce tu fecha de nacimiento."));
+		if ((entradaño % 100 != 0 && entradaño % 4 == 0) || (entradaño % 100 ==0 && entradaño % 400 ==0)) System.out.println(entradaño + ", " + tuañobisiesto);
+		else System.out.println(entradaño + ", " + tuañonobisiesto);
+	
+			
+		
+	}while(valido==false);
 }
 }
+		
