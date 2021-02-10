@@ -14,6 +14,8 @@ public static void main(String[] args){
 	String ciutat05="";
 	String ciutat06="";
 	
+	
+	
 	System.out.println("Introduce el nombre de una ciudad seis veces: ");
 	Scanner entrada=new Scanner(System.in);
 		ciutat01=entrada.next();
@@ -29,6 +31,8 @@ public static void main(String[] args){
 	
 	// Fase 02
 		
+		
+		
 	ArrayList<String> ciudades= new ArrayList<String>();
 	
 		ciudades.add(ciutat01);
@@ -40,11 +44,22 @@ public static void main(String[] args){
 		
 		Collections.sort(ciudades,String.CASE_INSENSITIVE_ORDER);		
 		
-		for(String sElemento: ciudades){
-		 System.out.println(sElemento);	
+		for(String nuevo:ciudades) {
+			
+			System.out.println(nuevo);
 		}
+		
+		
+	// Fase 03
+		
+		String str = ciudades.toString().replaceAll("\\[|\\]", "").replaceAll(", ",", ").replace('a','4');
+		System.out.println(str);
 		
 		
 	
 }
 }
+
+
+
+
