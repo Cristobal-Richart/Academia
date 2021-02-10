@@ -35,8 +35,6 @@ private static void p2() {
 	}
 	
 	entrada.close();
-	
-	
-}
 
+}
 }
