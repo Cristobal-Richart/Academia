@@ -13,17 +13,19 @@ public static void main(String[] args) {
 	
 	
 	
-	
+	// Creo Array de los platos y relleno con Bucle For Each.
 	
 	String [] plato={"Carrillada de cerdo Ibérico,", "Verduras a la plancha,", "Gazpacho Manchego,", "Paella," };
 		
 	ArrayList<String> menu=new ArrayList<String>();
 	
-	for (String menu1: plato) {
-		menu.add(menu1);
+	for (String nuevomenu: plato) {
+		menu.add(nuevomenu);
+		
 	}
 	
-			
+	// Creo un Array de precios y relleno con Bucle For each.
+	
 	int []precio= {10,8,6,5};
 		
 	ArrayList<Integer> precioplato=new ArrayList<Integer>();
@@ -31,104 +33,76 @@ public static void main(String[] args) {
 	for (int nuevopre:precio ) {
 		
 		precioplato.add(nuevopre);
+		
 	}
 	
+	// Creo Iterator para mostrar en pantalla los platos ordenados por numero, con su precio.
 	
 	int[]contador= {1,2,3,4};
 	ArrayList<Integer> contadorplatos=new ArrayList<Integer>();
 	for(int nuevoconta:contador) {
 		contadorplatos.add(nuevoconta);
 	}
-	
-		
-	
 	Iterator<Integer> ITcontador=contadorplatos.iterator();
 	Iterator<String> ITmenu=menu.iterator();
 	Iterator<Integer> ITprecio=precioplato.iterator();
-	
-	
-	
-	
+		
 	while(ITmenu.hasNext())	{
 				
 		System.out.println(ITcontador.next()+ " "+ITmenu.next()+" cuesta " +ITprecio.next()+ " euros.");
 	}
 		
-		
-	
-	
-	
-	
-	
+	/* Creamos el Array "pagar" para guardar los precios de los platos escogidos.
+	 * Rellenamos el Array "pedido" y "pagar" de forma automática con un Bucle Do-While y un If anidado.
+	 */
 
 	ArrayList<Integer> pedido= new ArrayList<Integer>();
-	
-	
-	int numeroplato = 0;
-	int salir=9;
-	System.out.println();
-	System.out.println("¿Que desea pedir para comer?, pulse 9 para salir del menú.");
-	while(numeroplato!=salir) {
+	ArrayList<Integer> pagar=new ArrayList<Integer>();
 		
+	int numeroplato = 0;
+	System.out.println();
+	System.out.println("¿Que desea pedir para comer?, pulse 0 para salir del menú.");
+	do {
 		Scanner entrada=new Scanner (System.in);
 		numeroplato=entrada.nextInt();
 		pedido.add(numeroplato);
 		if(numeroplato==1) {
-			System.out.println("Has escogido Carrillada de cerdo Ibérico.");
+			System.out.println("Has escogido Carrillada de cerdo Ibérico, son " +precio[0]+ " euros.");
 			System.out.println("¿Deseas algo más?");
+			pagar.add(10);
 			
 		}else if(numeroplato==2) {
-			System.out.println("Has escogido Verduras a la Plancha.");
+			System.out.println("Has escogido Verduras a la Plancha, son "+precio[1]+ " euros.");
 			System.out.println("¿Deseas algo más?");
+			pagar.add(8);
 		}
 		else if(numeroplato==3) {
-			System.out.println("Has escogido Gazpacho Manchego.");
+			System.out.println("Has escogido Gazpacho Manchego, son " +precio[2]+ " euros.");
 			System.out.println("¿Deseas algo más?");
+			pagar.add(6);
 		}
 		else if(numeroplato==4) {
-			System.out.println("Has escogido Paella.");
+			System.out.println("Has escogido Paella, son " +precio[3]+ " euros.");
 			System.out.println("¿Deseas algo más?");
+			pagar.add(5);
 		}
 				
 		else System.out.println("La comanda ha sido pasada a cocina, Gracias.");
 		System.out.println();
+	}while(numeroplato != 0);
+	
+	// Creamos Bucle For Each para sumar el precio total del menú.
+	
+	int suma=0;
+	for (Integer nuevo: pagar) {
+		suma=suma+nuevo;		
 	}
-	
-	for (int i=0; i<pedido.size();i++) {
-		
-		if(i==1) System.out.println(plato[0]+" "+precio[0]);
-		if(i==2) System.out.println(plato[1]+" "+precio[1]);
-		if(i==3) System.out.println(plato[2]+" "+precio[2]);
-		if(i==4) System.out.println(plato[3]+" "+precio[3]);
-		
-		
-		
-	}
-	int []suma=new int [precioplato.size()];
-	for (int i=0; i<precioplato.size();i++) {
-		suma[i]=precioplato(i);
-		System.out.println(i);
-		
-	}
-	
-	
-	
-	
-	
+	System.out.println("El precio total del menú es de: " +suma+ " euros.");
 		
 	
-	
-	System.out.println("Pase por caja y difrute de su menu.");
-}
-
-private static int precioplato(int i) {
-	// TODO Auto-generated method stub
-	return 0;
-}
-
-private static int pedido(int i) {
-	// TODO Auto-generated method stub
-	return 0;
+	System.out.println();
+	System.out.println("Pase por caja y difrute de su menú.");
 }
 
 }
+
